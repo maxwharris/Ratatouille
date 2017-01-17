@@ -1,8 +1,8 @@
-/*This obstacle.js file will hold the functions 
+/*This Knife.js file will hold the functions 
  * that intialize and udpate the obstacle
  *
  *File description:
- *ADD HERE
+ *
  *
  */
 var img;
