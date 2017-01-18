@@ -59,6 +59,13 @@ function jump(){
   
 }
 
+function checkRatCol(x,y,w,h) {
+	if (x >= xRat && x <= xRat+150) { // 150 is rat width
+		if (y >= yRat && y <= yRat+83)
+			print("HITTING");
+	}
+}
+
 function keyPressed() {
   if (keyCode === 32 && !JUMPING) {
     print("JUMP");
