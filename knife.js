@@ -9,8 +9,8 @@
 function initializeKnife() {
   kx = 599;
   ky = 450;
-  kw = 600;
-  kh = 100;
+  kw = 435;
+  kh = 58;
   var knimg;
   
   preloadKnife();
@@ -33,6 +33,21 @@ function preloadKnife() {  // preload() runs once
 //   updateKnife();
 // }
 
+function getknifeX(){
+  return kx;
+}
+
+function getknifeY(){
+  return ky;
+}
+
+function getknifeW(){
+  return kw;
+}
+
+function getknifeH(){
+  return kh;
+}
 
 function updateKnife() {
 
