@@ -70,6 +70,10 @@ function checkRatCol(x,y,w,h) {
   if (xRat+66 <= x+w  && xRat+150 >= x)  {
     if((yRat+66 >= y)) {
       col = true;
+      background(255,255,255);
+      textSize(60);
+      text("GAME OVER", 500, 257);
+      fill(0,0,0);
     } 
   } 
 
