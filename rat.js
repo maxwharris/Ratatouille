@@ -1,5 +1,5 @@
 var xRat, yRat, JUMP, JUMPING,yVel,yAccel,dir,img;
-
+ var col;
 
 
 function initializeRat() {
@@ -16,6 +16,7 @@ function initializeRat() {
 function updateRat() {
   
 	jump();
+  print(col);
 	rat();
 
 
@@ -34,6 +35,9 @@ function rat(){
 	
 	yVel+=yAccel;
 	yRat += yVel;
+
+//  fill(0,0,0);
+ //rect(xRat+40,yRat,150,66);
 }
 
 function jump(){
@@ -60,10 +64,23 @@ function jump(){
 }
 
 function checkRatCol(x,y,w,h) {
-	if (x >= xRat && x <= xRat+150) { // 150 is rat width
-		if (y >= yRat && y <= yRat+83)
-			print("HITTING");
-	}
+
+  col = false;
+
+  if (xRat+66 <= x+w  && xRat+150 >= x)  {
+    if((yRat+66 >= y)) {
+      col = true;
+    } 
+  } 
+
+	// if ((x >= xRat+40 && x <= xRat+150) || (x+w >= xRat+40 && x+w <= xRat+150) || ) { // 150 is rat width
+
+
+	// 	if ((y >= yRat && y <= yRat+66)|| (y+h >= yRat && y+h <= yRat+66) ||)
+	// 		print("HITTING");
+
+ //    // collision event
+	// }
 }
 
 function keyPressed() {

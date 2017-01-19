@@ -51,7 +51,8 @@ function getknifeH(){
 
 function updateKnife() {
 
-  
+  //rect(kx,ky,kw,kh);
+
   //insert code the make the obstacle move automaticallky
   //and reset to random positions so the game isn't boring.
 
@@ -62,8 +63,8 @@ function updateKnife() {
   if (kx < -599) {
     kx = 1200;
     ky = 450;
-    kw = 600;
-    kh = 100;
+    kw = 435;
+    kh = 58;
   }
 }
 
