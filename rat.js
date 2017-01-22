@@ -74,6 +74,7 @@ function checkRatCol(x,y,w,h) {
       textSize(60);
       text("GAME OVER", 500, 257);
       fill(0,0,0);
+      yRat = 1000;
     } 
   } 
 
