@@ -1,5 +1,5 @@
-var xRat, yRat, JUMP, JUMPING,yVel,yAccel,dir,img;
-
+var xRat, yRat, JUMP, JUMPING, yVel, yAccel, dir, img;
+var col;
 
 
 function initializeRat() {
@@ -16,6 +16,7 @@ function initializeRat() {
 function updateRat() {
   
 	jump();
+  print(col);
 	rat();
 
 
@@ -34,6 +35,9 @@ function rat(){
 	
 	yVel+=yAccel;
 	yRat += yVel;
+
+//  fill(0,0,0);
+ //rect(xRat+40,yRat,150,66);
 }
 
 function jump(){
@@ -57,6 +61,36 @@ function jump(){
   }
   
   
+}
+
+function checkRatCol(x,x1,y,w,h) {
+
+  col = false;
+
+  //if (((xRat + 66 <= x + w) && (xRat+150 >= x)) || ((xRat+66 <= x1 + w) && (xRat + 150 >= x1))){
+  if (xRat+66 <= x + w  && xRat+150 >= x){
+    if((yRat + 66 >= y)) {
+      col = true;
+      background(255);
+      textSize(60);
+      text("GAME OVER", 420, 257);
+      fill(0);
+      noloop();
+    } 
+  } 
+  if (xRat+66 <= x1 + w  && xRat+150 >= x1){
+    if((yRat + 66 >= y)) {
+      col = true;
+      background(255);
+      textSize(60);
+      text("GAME OVER", 420, 257);
+      fill(0);
+      noloop();
+    } 
+  } 
+  
+  
+
 }
 
 function keyPressed() {
