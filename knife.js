@@ -1,10 +1,4 @@
-/*This obstacle.js file kwill hold the functions 
- * that intialize and udpate the obstacle
- *
- *File description:
- *ADD HERE
- *
- */
+var kx, kx1, ky, kw, kh;
 
 function initializeKnife() {
   kx = 2100;
