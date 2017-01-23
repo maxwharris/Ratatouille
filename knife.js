@@ -1,40 +1,43 @@
-/*This obstacle.js file kwill hold the functions 
- * that intialize and udpate the obstacle
- *
+/* Eleanor Davol
+1/23/17
+Knife Obstacle 
+/*This obstacle.js file will hold the functions for the knife. It will
+ * intialize obstacle
+ * preload image
+ * update obstacle
  *File description:
- *ADD HERE
- *
+ * This code creates two knives that move across the screen as obstacles for the rat, resetting everytime it moves off screen. 
  */
 
+//This code initializes the variables of the two knives. 
 function initializeKnife() {
-  kx = 599;
+//The variables below are for the length, width, and height of the two knives and the starting positions.  
+//They have different x positions but the same y position on the table so there are two x variables and one y variable.
+  kx = 2100;
+  kx1 = 1200;
   ky = 450;
   kw = 435;
   kh = 58;
+//This variable is for the downloaded image.
   var knimg;
-  
+
+//This variable is for the external image that is downloaded.  
   preloadKnife();
 }
 
 
-  
+//This function loads an external file which contains the knife image.
 function preloadKnife() {  // preload() runs once
   knimg = loadImage('assets/knife.png');
 }
 
-// function setup() {  // setup() kaits until preload() is done
-//   // get color of middle pixel
-//   initializeObstacle();
-// }
-
-// function draw() {
-  
-  
-//   updateKnife();
-// }
-
+//These functions allow the variables for the positions, height, and width of the knife to be transferred over to the background file. 
 function getknifeX(){
   return kx;
+}
+
+function getknifeX1(){
+  return kx1;
 }
 
 function getknifeY(){
@@ -49,30 +52,31 @@ function getknifeH(){
   return kh;
 }
 
+
+//For knife 1: This function updates the position of the knife so that the kx coordinate changes by 6. 
 function updateKnife() {
-
-  //rect(kx,ky,kw,kh);
-
-  //insert code the make the obstacle move automaticallky
-  //and reset to random positions so the game isn't boring.
-
-  //insert the code that drakws the obstacle
-  
   image(knimg, kx, ky);
   kx = kx - 6;
+//This allows the knife to reset to its original position when it goes off the screen.  
   if (kx < -599) {
     kx = 1200;
     ky = 450;
     kw = 435;
     kh = 58;
   }
+  
+//For knife 2: This function updates the position of the knife so that the kx1 coordinate changes by 6.   
+  image(knimg, kx1, ky);
+  kx1 = kx1 - 6;
+//This allows the knife to reset to its original position when it goes off the screen.
+  if (kx1 < -599) {
+    kx1 = 1200;
+    ky = 450;
+    kw = 435;
+    kh = 58;
+  }
 }
 
-/** TESTING CODE **/
-/* This code should be commented kwhen the team has put all
-the files in one project. But kyou kwill need this code to test
-the character functions. Add the code to test kyour functions in here.
-*/
 
 
 
