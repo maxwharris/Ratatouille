@@ -1,6 +1,6 @@
 var xRat, yRat, JUMP, JUMPING,yVel,yAccel,dir,img;
  var col;
-
+        
 
 function initializeRat() {
   preload();
@@ -62,6 +62,7 @@ function jump(){
   
   
 }
+    
 
 function checkRatCol(x,y,w,h) {
 
@@ -70,8 +71,19 @@ function checkRatCol(x,y,w,h) {
   if (xRat+66 <= x+w  && xRat+150 >= x)  {
     if((yRat+66 >= y)) {
       col = true;
+      background(255);
+      textSize(60);
+      text("GAME OVER", 500, 257);
+      fill(0);
+      noloop();
+        
+      }
+      
     } 
-  } 
+    
+  }
+ 
+   
 
 	// if ((x >= xRat+40 && x <= xRat+150) || (x+w >= xRat+40 && x+w <= xRat+150) || ) { // 150 is rat width
 
@@ -81,7 +93,6 @@ function checkRatCol(x,y,w,h) {
 
  //    // collision event
 	// }
-}
 
 function keyPressed() {
   if (keyCode === 32 && !JUMPING) {
