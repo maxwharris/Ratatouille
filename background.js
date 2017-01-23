@@ -50,6 +50,11 @@ function setup() {
 //Change or implement as needed
 function draw() {
   updateBackground();
+ 
+ 
+  checkRatCol(getknifeX(), getknifeY(), getknifeW(), getknifeH());
+ 
+ 
   updateRat();
   updateKnife();
 }
