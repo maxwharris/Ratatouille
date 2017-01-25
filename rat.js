@@ -44,22 +44,22 @@ function updateRat() {
 	rat();
 }
 
-// prepares rat image for variable
+// uploads rat image for variable
 function preload() {
   img = loadImage("assets/rat.png");
 }
 
 // draws image at xRat and yRat. changes vertical speed of rat for jumping.
 function rat(){
+
 	image(img,xRat,yRat);
 	
 	yAccel*=dir;
-	
 	yVel+=yAccel;
 	yRat += yVel;
 
 
-
+// if collided with an object, it will show a gameover screen
   if(!run) {
     background(255);
     textSize(60);
@@ -74,6 +74,7 @@ function rat(){
     highscore = score;
   }
   
+  // score display
   textSize(10);
   text("Score: "+ score,1000, 30);
   text("highscore: "+ highscore,1000, 45);
@@ -116,16 +117,15 @@ function checkRatCol(x,y,w,h) {
   } 
 } 
  
-      
-// checks if space bar is pressed to run jump function  
 function keyPressed() {
+  // checks if space bar is pressed to run jump function  
   if (keyCode === 32 && !JUMPING) {
     JUMP = true;
   }
 
+  // checks if enter key is pressed and if game is not running to restart game 
   if (keyCode === 13 && !run) {
     initializeRat();
 
   }
 }
-
