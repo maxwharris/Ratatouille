@@ -3,7 +3,7 @@
  *15.1.2017
  *Program description: This Program hosts the code for the background and initializes and updates the functions within the rat.js (character) and knife.js (obstacle) files. This means 
  *that the background.js file is the main file that combines all the files.
- *Notes: A person responsible for this file should design the background as well as initalize the character and obstalce bby calling those functions and call the update functions for 
+ *Notes: A person responsible for this file should design the background as well as initalize the character and obstalce by calling those functions and call the update functions for 
  *the character and the obstacle
 */
 

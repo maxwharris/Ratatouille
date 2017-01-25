@@ -18,7 +18,7 @@ counter increases score by '1 point' every frame
 
 col is a boolean that returns whether it's colliding with an object or not.
 */
-var xRat, yRat, JUMP, JUMPING, yVel, yAccel, dir, img, run, score, highscore=0; 
+var xRat, yRat, JUMP, JUMPING, yVel, yAccel, dir, img, run, counter; 
 var col;
 
 
@@ -29,7 +29,7 @@ function initializeRat() {
 
   run = true;
 
-  score = 0;
+  counter = 0;
 
   xRat = 100;
   yRat = 450;
@@ -45,40 +45,32 @@ function updateRat() {
 	rat();
 }
 
-// uploads rat image for variable
+// prepares rat image for variable
 function preload() {
   img = loadImage("assets/rat.png");
 }
 
 // draws image at xRat and yRat. changes vertical speed of rat for jumping.
 function rat(){
-
 	image(img,xRat,yRat);
 	
-	yAccel*=dir;
-	yVel+=yAccel;
+	yAccel *= dir;
+	
+	yVel += yAccel;
 	yRat += yVel;
 
-
-// if collided with an object, it will show a gameover screen
   if(!run) {
     background(255);
     textSize(60);
     text("GAME OVER", 420, 257);
-    text("'ENTER' to restart", 420, 330);
     fill(0);
   } else {
-    score++;
-  }
-
-  if(score>highscore){
-    highscore = score;
+    counter++;
   }
   
-  // score display
   textSize(10);
-  text("Score: "+ score,1000, 30);
-  text("highscore: "+ highscore,1000, 45);
+  text("Score: "+ counter,1000, 30);
+
 }
 
 // jumping function
@@ -118,15 +110,12 @@ function checkRatCol(x,y,w,h) {
   } 
 } 
  
+      
+// checks if space bar is pressed to run jump function  
 function keyPressed() {
-  // checks if space bar is pressed to run jump function  
   if (keyCode === 32 && !JUMPING) {
+    print("JUMP");
     JUMP = true;
   }
-
-  // checks if enter key is pressed and if game is not running to restart game 
-  if (keyCode === 13 && !run) {
-    initializeRat();
-
-  }
 }
+
