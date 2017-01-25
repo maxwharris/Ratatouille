@@ -22,6 +22,7 @@ var xRat, yRat, JUMP, JUMPING, yVel, yAccel, dir, img, run, score, highscore=0;
 var col;
 
 
+
 // this declares the rat's position, and basic speed.
 function initializeRat() {
   preload();
@@ -110,7 +111,7 @@ function checkRatCol(x,y,w,h) {
   col = false;
 
   if (xRat+66 <= x + w  && xRat+150 >= x){
-    if((yRat + 66 >= y)) {
+    if((yRat + 83 >= y && y+h >= yRat)) {
       col = true;
       run = false;     
     } 
