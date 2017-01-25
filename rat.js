@@ -18,7 +18,7 @@ counter increases score by '1 point' every frame
 
 col is a boolean that returns whether it's colliding with an object or not.
 */
-var xRat, yRat, JUMP, JUMPING, yVel, yAccel, dir, img, run, counter; 
+var xRat, yRat, JUMP, JUMPING, yVel, yAccel, dir, img, run, score, highscore=0; 
 var col;
 
 
@@ -28,7 +28,7 @@ function initializeRat() {
 
   run = true;
 
-  counter = 0;
+  score = 0;
 
   xRat = 100;
   yRat = 450;
@@ -58,18 +58,25 @@ function rat(){
 	yVel+=yAccel;
 	yRat += yVel;
 
+
+
   if(!run) {
     background(255);
     textSize(60);
     text("GAME OVER", 420, 257);
+    text("'ENTER' to restart", 420, 330);
     fill(0);
   } else {
-    counter++;
+    score++;
+  }
+
+  if(score>highscore){
+    highscore = score;
   }
   
   textSize(10);
-  text("Score: "+ counter,1000, 30);
-
+  text("Score: "+ score,1000, 30);
+  text("highscore: "+ highscore,1000, 45);
 }
 
 // jumping function
@@ -113,8 +120,12 @@ function checkRatCol(x,y,w,h) {
 // checks if space bar is pressed to run jump function  
 function keyPressed() {
   if (keyCode === 32 && !JUMPING) {
-    print("JUMP");
     JUMP = true;
+  }
+
+  if (keyCode === 13 && !run) {
+    initializeRat();
+
   }
 }
 
