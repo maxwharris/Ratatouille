@@ -16,6 +16,7 @@ function initializeKnife() {
   kx = 2100;
   kx1 = 1200;
   ky = 450;
+  ky1 = 450;
   kw = 435;
   kh = 58;
 //This variable is for the downloaded image.
@@ -44,6 +45,10 @@ function getknifeY(){
   return ky;
 }
 
+function getknifeY(){
+  return ky1;
+}
+
 function getknifeW(){
   return kw;
 }
@@ -58,20 +63,30 @@ function updateKnife() {
   image(knimg, kx, ky);
   kx = kx - 6;
 //This allows the knife to reset to its original position when it goes off the screen.  
-  if (kx < -599) {
-    kx = 1200;
+  
+  if (kx < -500) {
     ky = 450;
+  }
+  
+  if (kx < -600) {
+    kx = random(1200, 1400);
+    ky = 450 - (random(0,150));
     kw = 435;
     kh = 58;
   }
   
 //For knife 2: This function updates the position of the knife so that the kx1 coordinate changes by 6.   
-  image(knimg, kx1, ky);
+  image(knimg, kx1, ky1);
   kx1 = kx1 - 6;
 //This allows the knife to reset to its original position when it goes off the screen.
-  if (kx1 < -599) {
-    kx1 = 1200;
-    ky = 450;
+  
+  if (kx1 < -500) {
+    ky1 = 450;
+  }
+  
+  if (kx1 < -600) {
+    kx1 = kx + random(800, 1000);
+    ky1 = 450 - (random(0,150));
     kw = 435;
     kh = 58;
   }
