@@ -3,7 +3,7 @@
  *15.1.2017
  *Program description: This Program hosts the code for the background and initializes and updates the functions within the rat.js (character) and knife.js (obstacle) files. This means 
  *that the background.js file is the main file that combines all the files.
- *Notes: A person responsible for this file should design the background as well as initalize the character and obstalce bby calling those functions and call the update functions for 
+ *Notes: A person responsible for this file should design the background as well as initalize the character and obstalce by calling those functions and call the update functions for 
  *the character and the obstacle
 */
 
@@ -41,8 +41,7 @@ function setup() { //This is the setup function for the entire game. That is why
 
 function draw() { //This is the main function for the entire game (draw function). This runs all of the updates ("updateRat();") so that the knife and background moves from right to left and the rat is able to jump. 
   updateBackground(); //Updates the background by refrencing the function at the tp of this file (line 12)
-  checkRatCol(getknifeX(), getknifeY(), getknifeW(), getknifeH()); //Refrences the functions from rat.js and knife.js files. This function determines whether there is a collision between the rat and knife.
-  checkRatCol(getknifeX1(), getknifeY(), getknifeW(), getknifeH());
+  checkRatCol(getknifeX(), getknifeX1(), getknifeY(), getknifeW(), getknifeH()); //Refrences the functions from rat.js and knife.js files. This function determines whether there is a collision between the rat and knife.
   updateRat(); //Refrences the function from Rat.js file. This function allows the rat to jump
   updateKnife(); //Refrences the function from Knife.js file. This function allows the knife to travel right to left
 }
