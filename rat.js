@@ -63,11 +63,11 @@ function rat(){
     textSize(60);
     text("GAME OVER", 420, 257);
     fill(0);
-  } else {
+  } else if (yRat < 202.5) {
     counter++;
   }
   
-  textSize(10);
+  textSize(30);
   text("Score: "+ counter,1000, 30);
 
 }
