@@ -42,7 +42,7 @@ function setup() { //This is the setup function for the entire game. That is why
 function draw() { //This is the main function for the entire game (draw function). This runs all of the updates ("updateRat();") so that the knife and background moves from right to left and the rat is able to jump. 
   updateBackground(); //Updates the background by refrencing the function at the tp of this file (line 12)
   checkRatCol(getknifeX(), getknifeY(), getknifeW(), getknifeH()); //Refrences the functions from rat.js and knife.js files. This function determines whether there is a collision between the rat and knife.
-  checkRatCol(getknifeX1(), getknifeY(), getknifeW(), getknifeH());
+  checkRatCol(getknifeX1(), getknifeY1(), getknifeW(), getknifeH());
   updateRat(); //Refrences the function from Rat.js file. This function allows the rat to jump
   updateKnife(); //Refrences the function from Knife.js file. This function allows the knife to travel right to left
 }
