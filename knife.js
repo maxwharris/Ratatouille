@@ -45,7 +45,7 @@ function getknifeY(){
   return ky;
 }
 
-function getknifeY(){
+function getknifeY1(){
   return ky1;
 }
 
