@@ -51,8 +51,7 @@ function preload() {
 
 // draws image at xRat and yRat. changes vertical speed of rat for jumping.
 function rat(){
-  rect(xRat,yRat,150,83);
-  //image(img,xRat,yRat);
+  image(img,xRat,yRat);
   
 
 
