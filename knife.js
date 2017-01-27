@@ -8,6 +8,7 @@ Knife Obstacle
  *File description:
  * This code creates two knives that move across the screen as obstacles for the rat, resetting everytime it moves off screen. 
  */
+var counter, kx, kx1, ky, ky1, kw, kh;
 
 //This code initializes the variables of the two knives. 
 function initializeKnife() {
@@ -45,7 +46,7 @@ function getknifeY(){
   return ky;
 }
 
-function getknifeY(){
+function getknifeY1(){
   return ky1;
 }
 
@@ -56,6 +57,8 @@ function getknifeW(){
 function getknifeH(){
   return kh;
 }
+
+
 
 
 //For knife 1: This function updates the position of the knife so that the kx coordinate changes by 6. 
