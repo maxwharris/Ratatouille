@@ -76,9 +76,9 @@ function rat(){
   }
   
   // score display
-  textSize(10);
+  textSize(25);
   text("Score: "+ score,1000, 30);
-  text("highscore: "+ highscore,1000, 45);
+  text("Highscore: "+ highscore,1000, 55);
 }
 
 // jumping function
