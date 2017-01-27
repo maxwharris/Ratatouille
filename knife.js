@@ -8,6 +8,8 @@ Knife Obstacle
  *File description:
  * This code creates two knives that move across the screen as obstacles for the rat, resetting everytime it moves off screen. 
  */
+
+//This defines the variables
 var counter, kx, kx1, ky, ky1, kw, kh;
 
 //This code initializes the variables of the two knives. 
