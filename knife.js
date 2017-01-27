@@ -67,13 +67,15 @@ function getknifeH(){
 function updateKnife() {
   image(knimg, kx, ky);
   kx = kx - 6;
-//This allows the knife to reset to its original position when it goes off the screen.  
+//This allows knife 1 to reset to its original position when it goes off the screen.  
   
   if (kx < -500) {
     ky = 450;
   }
-  
+
+//This allows the x and y position of knife 1 to vary so that the game isn't boring. 
   if (kx < -600) {
+    //The random function is set between 1200 and 1400 so that it doesn't overlap ever with knife 2
     kx = random(1200, 1400);
     ky = 450 - (random(0,150));
     kw = 435;
@@ -83,12 +85,13 @@ function updateKnife() {
 //For knife 2: This function updates the position of the knife so that the kx1 coordinate changes by 6.   
   image(knimg, kx1, ky1);
   kx1 = kx1 - 6;
+
 //This allows the knife to reset to its original position when it goes off the screen.
-  
   if (kx1 < -500) {
     ky1 = 450;
   }
-  
+
+//This allows the x and y position of knife 2 to vary so that the game isn't boring. 
   if (kx1 < -600) {
     kx1 = kx + random(800, 1000);
     ky1 = 450 - (random(0,150));
